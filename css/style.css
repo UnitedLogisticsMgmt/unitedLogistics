@@ -273,7 +273,8 @@ h1, h2, h3, h4, h5,
 .site-navbar {
   margin-bottom: 0px;
   z-index: 1999;
-  position: absolute;
+  background-color: #343a40;
+  position: fixed;
   width: 100%; }
   .site-navbar.transparent {
     background: transparent; }
@@ -1190,8 +1191,7 @@ h1, h2, h3, h4, h5,
 
 .overlap-section {
   margin-top: -150px;
-  position: relative;
-  z-index: 9; }
+  position: relative;}
 
 .unit-4 .unit-4-icon span {
   line-height: 0;
