@@ -66,7 +66,6 @@ h1, h2, h3, h4, h5,
 
 .btn {
   text-transform: uppercase;
-  letter-spacing: .2em;
   border-radius: 0; }
   .btn:hover, .btn:active, .btn:focus {
     outline: none;
