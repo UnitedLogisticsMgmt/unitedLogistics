@@ -1,34 +1,51 @@
 <?php
-require 'db_connection.php'; // Include the database connection file
+require '../db_connection.php';
+require '../php/log_activity.php'; // Include the logging function
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Retrieve form data
-    $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $role = $_POST['role']; // Ensure to handle this safely, possibly with a dropdown
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $password = $_POST['password'];
+    $role = $_POST['role'];
 
-    // Generate a unique email verification token
-    $verification_token = bin2hex(random_bytes(50));
+    // Define the allowed roles
+    $allowed_roles = ['admin', 'affiliate', 'customer', 'employee', 'developer', 'partner'];
+
+    // Validate email format
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Invalid email format. Please enter a valid email address.";
+        log_activity("Registration failed: Invalid email format for email: $email.");
+        exit();
+    }
+
+    // Validate password length (for example, at least 8 characters)
+    if (strlen($password) < 8) {
+        echo "Password must be at least 8 characters long.";
+        log_activity("Registration failed: Password too short for email: $email.");
+        exit();
+    }
+
+    // Validate role
+    if (!in_array($role, $allowed_roles)) {
+        echo "Invalid role selected. Please select a valid role.";
+        log_activity("Registration failed: Invalid role selected for email: $email.");
+        exit();
+    }
+
+    // Hash the password
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     // Insert the new user into the database
-    $sql = "INSERT INTO users (email, password, role, verification_token) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO users (email, password, role) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssss", $email, $password, $role, $verification_token);
+    $stmt->bind_param("sss", $email, $hashedPassword, $role);
 
     if ($stmt->execute()) {
-        // Send verification email
-        $verificationLink = "https://unitedlogisticsmgmt.com/verify_email.php?token=" . $verification_token;
-        $subject = "Email Verification";
-        $message = "Click the following link to verify your email: " . $verificationLink;
-        $headers = "From: no-reply@unitedlogisticsmgmt.com";
-
-        if (mail($email, $subject, $message, $headers)) {
-            echo "Registration successful! Please verify your email.";
-        } else {
-            echo "Failed to send verification email.";
-        }
+        echo "Registration successful! You can now <a href='../user/login.html'>log in</a>.";
+        log_activity("User registered: Email: $email, Role: $role.");
     } else {
-        echo "Error: " . $stmt->error;
+        echo "Error: Registration failed. Please try again later.";
+        log_activity("Registration failed: Database error for email: $email.");
     }
 
     $stmt->close();

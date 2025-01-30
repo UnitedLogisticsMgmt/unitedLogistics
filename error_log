@@ -1,0 +1,16 @@
+[27-Jan-2025 06:17:53 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'unitqryz_jondevops'@'localhost' (using password: YES) in /home/unitqryz/public_html/db_connection.php:8
+Stack trace:
+#0 /home/unitqryz/public_html/db_connection.php(8): mysqli->__construct()
+#1 /home/unitqryz/public_html/test_connection.php(2): require('/home/unitqryz/...')
+#2 {main}
+  thrown in /home/unitqryz/public_html/db_connection.php on line 8
+[27-Jan-2025 06:18:33 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'unitqryz_jondevops'@'localhost' (using password: YES) in /home/unitqryz/public_html/db_connection.php:8
+Stack trace:
+#0 /home/unitqryz/public_html/db_connection.php(8): mysqli->__construct()
+#1 /home/unitqryz/public_html/test_connection.php(2): require('/home/unitqryz/...')
+#2 {main}
+  thrown in /home/unitqryz/public_html/db_connection.php on line 8
+[27-Jan-2025 06:22:01 UTC] PHP Parse error:  syntax error, unexpected identifier "unitqryz_unitedlogisticsmgmt_db" in /home/unitqryz/public_html/db_connection.php on line 5
+[27-Jan-2025 06:24:35 UTC] PHP Parse error:  syntax error, unexpected identifier "unitqryz_unitedlogisticsmgmt_db" in /home/unitqryz/public_html/db_connection.php on line 5
+[27-Jan-2025 06:30:47 UTC] PHP Parse error:  syntax error, unexpected identifier "unitqryz_unitedlogisticsmgmt_db" in /home/unitqryz/public_html/db_connection.php on line 5
+[27-Jan-2025 06:30:49 UTC] PHP Parse error:  syntax error, unexpected identifier "unitqryz_unitedlogisticsmgmt_db" in /home/unitqryz/public_html/db_connection.php on line 5
