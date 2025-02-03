@@ -38,73 +38,8 @@
       <div class="site-mobile-menu-body"></div>
     </div>
     
-    <header class="site-navbar py-3" role="banner">
+    <?php include 'header.php'; ?>
 
-      <div class="container">
-        <div class="row align-items-center">
-          
-          <div class="col-11 col-xl-1">
-            <h1 class="mb-0"><a href="index.html" class="mb-0">ULM</a></h1>
-          </div>
-          <div class="col-14 col-md-13 d-none d-xl-block">
-            <nav class="site-navigation position-relative text-right" role="navigation">
-
-              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li class="has-children">
-                  <a href="#" class="parent-menu-item">Product</a>
-                  <ul class="dropdown">
-                    <li><a href="product/outsourced-fulfillment-services.html">Outsourced Fulfillment</a></li>
-                    <li><a href="product/warehouse-management-system.html">WMS</a></li>
-                    <li><a href="product/inventory-placement-services.html">Inventory Placement</a></li>
-                    <li><a href="product/global-logistics-expansion.html">Global Expansion</a></li>
-                    <li><a href="product/full-stack-fulfillment-platform.html">Full-Stack Fulfillment Platform</a></li>
-                    <li><a href="product/two-day-shipping.html">2-Day Shipping</a></li>
-                    <li><a href="product/omnichannel-b2b-logistics.html">Omnichannel & B2B</a></li>
-                    <li><a href="product/customized-logistics-solutions.html">Customization</a></li>
-                    <li><a href="product/apps-and-apis.html">Apps & APIs</a></li>
-                    <li><a href="product/ulm-freight-services.html">ULM Freight</a></li>
-                                     
-                  </ul>
-                </li>
-                <li class="has-children">
-                  <a href="#" class="parent-menu-item">Pricing</a>
-                  <ul class="dropdown">
-                    <li><a href="pricing/outsourced-fulfillment-pricing.html">Outsourced Fulfillment</a></li>
-                    <li><a href="pricing/wms-pricing.html">WMS</a></li>
-                    <li><a href="services/index.html">All Services</a></li>
-                  </ul>
-                </li>
-                <li><a href="integrations.html/index.html">Integrations</a></li>
-                <li><a href="reviews/index.html">Customers</a></li>
-                <li class="has-children">
-                  <a href="#" class="parent-menu-item">Industries</a>
-                  <ul class="dropdown">
-                    <li><a href="industries/health-wellness-logistics.html">Health & Wellness</a></li>
-                    <li><a href="industries/beauty-personal-care-logistics.html">Beauty & Personal Care</a></li>
-                    <li><a href="industries/food-beverage-logistics.html">Food & Beverage</a></li>
-                    <li><a href="industries/apparel-accessories-logistics.html">Apparel & Accessories</a></li>
-                    <li><a href="industries/home-goods-logistics.html">Home Goods</a></li>
-                    <li><a href="industries/pets-logistics.html">Pets</a></li>
-                    <li><a href="industries/sports-toys-games-logistics.html">Sports, Toys, & Games</a></li>
-                    <li><a href="industries/index.html">All Industries</a></li>                    
-                  </ul>
-                </li>
-                <li><a href="support/resources.html">Resources</a></li>
-                <li><a href="support/index.html">Support</a></li>
-                <li><a href="https://unitedlogisticsmgmt.com/user/login.html">Login / Track</a></li>
-              </ul>
-            </nav>
-          </div>
-
-
-          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
-
-          </div>
-
-        </div>
-      </div>
-      
-    </header>
 
   
 

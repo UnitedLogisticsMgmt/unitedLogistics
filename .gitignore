@@ -1,1 +1,40 @@
+# Ignore environment configuration files
+.env
+.env.local
+.env.*.local
+
+# Ignore database connection files
 db_connection.php
+
+# Ignore log files
+*.log
+*.log.*
+
+# Ignore cache and temporary files
+cache/
+*.cache
+*.tmp
+
+# Ignore IDE-specific files and directories (example for VSCode and IntelliJ)
+.vscode/
+.idea/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore compiled or packaged files
+*.min.js
+*.min.css
+
+# Ignore local database files
+*.sqlite
+
+# Ignore generated coverage reports
+coverage/
+
+# Ignore node_modules if using Node.js
+node_modules/
+
+# Ignore test and coverage results
+/test-results/

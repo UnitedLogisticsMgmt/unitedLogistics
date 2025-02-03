@@ -41,9 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("sss", $email, $hashedPassword, $role);
 
     if ($stmt->execute()) {
+        echo "Registration successful! You can now <a href='../user/login.php'>log in</a>.";
         log_activity("User registered: Email: $email, Role: $role.");
-        header("Location: ../user/login.php"); // Redirect to the login page after successful registration
-        exit();
     } else {
         echo "Error: Registration failed. Please try again later.";
         log_activity("Registration failed: Database error for email: $email.");

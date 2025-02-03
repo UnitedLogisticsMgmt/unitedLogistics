@@ -2,15 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Reset Password</title>
+    <title>Sign Up</title>
 </head>
 <body>
-    <h2>Reset Password</h2>
-    <form action="../php/reset_password.php" method="POST">
-        <input type="hidden" name="token" value="<?php echo htmlspecialchars($_GET['token']); ?>" required>
-        <label for="password">New Password:</label>
+    <?php include '../header.php'; ?>
+    <h2>Sign Up</h2>
+    <form action="../php/register.php" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+        <br>
+        <label for="password">Password:</label>
         <input type="password" name="password" id="password" required>
-        <input type="submit" value="Reset Password">
+        <br>
+        <label for="role">Role:</label>
+        <select name="role" id="role" required>
+            <option value="admin">Admin</option>
+            <option value="affiliate">Affiliate</option>
+            <option value="customer">Customer</option>
+            <option value="employee">Employee</option>
+            <option value="developer">Developer</option>
+            <option value="partner">Partner</option>
+        </select>
+        <br>
+        <input type="submit" value="Sign Up">
     </form>
 </body>
 </html>

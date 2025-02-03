@@ -30,11 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if (!empty($user['2fa_secret'])) {
                 // Redirect to 2FA verification page
-                header("Location: ../user/verify_2fa.html");
+                header("Location: ../user/verify_2fa.php");
                 exit();
             } else {
                 // Redirect to dashboard or any authenticated page
-                header("Location: dashboard.php");
+                header("Location: ../user/dashboard.php");
                 exit();
             }
         } else {
@@ -42,11 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             log_activity("Login failed: Incorrect password for email: $email.");
         }
     } else {
-        echo "No account found with that email. Please <a href='../user/signup.html'>sign up</a>.";
+        echo "No account found with that email. Please <a href='../user/signup.php'>sign up</a>.";
         log_activity("Login failed: No account found for email: $email.");
     }
 
     $stmt->close();
     $conn->close();
 }
-?>

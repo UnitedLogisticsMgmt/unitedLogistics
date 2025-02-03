@@ -3,7 +3,7 @@ require '../db_connection.php';
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../user/login.html");
+    header("Location: ../user/login.php");
     exit();
 }
 
@@ -38,9 +38,9 @@ $conn->close();
         <p>Welcome, <?php echo ucfirst($userRole); ?>!</p>
         <p>Your personalized data:</p>
         <ul>
-            <li>Name: <?php echo htmlspecialchars($userData['name']); ?></li>
-            <li>Email: <?php echo htmlspecialchars($userData['email']); ?></li>
-            <li>Other Info: <?php echo htmlspecialchars($userData['other_info']); ?></li>
+            <li>Name: <?php echo isset($userData['name']) ? htmlspecialchars($userData['name']) : 'No data available'; ?></li>
+            <li>Email: <?php echo isset($userData['email']) ? htmlspecialchars($userData['email']) : 'No data available'; ?></li>
+            <li>Other Info: <?php echo isset($userData['other_info']) ? htmlspecialchars($userData['other_info']) : 'No data available'; ?></li>
         </ul>
         <!-- Add more user-specific content here -->
     <?php endif; ?>

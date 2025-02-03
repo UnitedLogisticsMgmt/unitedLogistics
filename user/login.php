@@ -5,6 +5,7 @@
     <title>Login</title>
 </head>
 <body>
+    <?php include '../header.php'; ?>
     <h2>Login</h2>
     <form action="../php/login.php" method="POST">
         <label for="email">Email:</label>
@@ -15,5 +16,8 @@
         <br>
         <input type="submit" value="Login">
     </form>
+    <br>
+    <a href="../user/signup.php"><button>Sign Up</button></a>
+    <a href="../user/forgot_password.php"><button>Forgot Password</button></a>
 </body>
 </html>

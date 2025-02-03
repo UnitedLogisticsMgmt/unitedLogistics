@@ -5,8 +5,9 @@
     <title>Signup</title>
 </head>
 <body>
+    <?php include '../header.php'; ?>
     <h2>Signup</h2>
-    <form action="php/register.php" method="POST">
+    <form action="../php/register.php" method="POST">
         <label for="email">Email:</label>
         <input type="email" name="email" id="email" required>
         <br>
